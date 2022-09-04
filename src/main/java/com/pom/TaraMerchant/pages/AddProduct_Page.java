@@ -18,6 +18,8 @@ import io.appium.java_client.android.AndroidElement;
 
 public class AddProduct_Page extends BasePage{
 	
+	// updated something
+	
 	@FindBy(xpath="//android.widget.ImageView[@index='0']")
     public WebElement ProductImage; 
 
