@@ -25,7 +25,7 @@ public class SwitchToUser extends BaseTest {
 		if(!hm.isElementPresent(TMConstants.Mobile_Text1)){
 			hm.reportFail("login page is not not loaded");
 		}
-		hm.OTPValidation("9885600022","6","0","0","0","2","2");		
+		hm.OTPValidation(TMConstants.MobileNumber,TMConstants.OTP0,TMConstants.OTP1,TMConstants.OTP2,TMConstants.OTP3,TMConstants.OTP4,TMConstants.OTP5);
 		//Runtime.getRuntime().exec("taskkill /F /IM cmd.exe");
 		add_paymentoption_Page addpay=new add_paymentoption_Page(aDriver, test);
 		

@@ -5,7 +5,6 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 
 import com.pom.TaraMerchant.pages.HomePage;
-import com.pom.TaraMerchant.pages.StoreCreation_Page;
 import com.pom.TaraMerchant.pages.add_paymentoption_Page;
 import com.pom.TaraMerchant.util.TMConstants;
 import com.relevantcodes.extentreports.LogStatus;

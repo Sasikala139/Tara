@@ -4,10 +4,8 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
-import com.pom.TaraMerchant.pages.AddProduct_Page;
 import com.pom.TaraMerchant.pages.HomePage;
 import com.pom.TaraMerchant.pages.OrderProducts_IndividualUser_Page;
-import com.pom.TaraMerchant.pages.StoreCreation_Page;
 import com.pom.TaraMerchant.util.TMConstants;
 import com.relevantcodes.extentreports.LogStatus;
 
@@ -15,7 +13,7 @@ public class OrderProducts_IndividualUser extends BaseTest {
 	
 
 	@Test
-	public void OrderProducts_IndividualUser() throws InterruptedException, IOException {
+	public void OrderProducts_IndividualUsr() throws InterruptedException, IOException {
 		test = rep.startTest("order_individual");
 		test.log(LogStatus.INFO, "Starting the order_individual test ");
 		launchApp();
@@ -32,7 +30,7 @@ public class OrderProducts_IndividualUser extends BaseTest {
 		
 		OrderProducts_IndividualUser_Page OrdProd= new OrderProducts_IndividualUser_Page(aDriver, test);
 		OrdProd.NavigationTo_IndividualUser();
-		OrdProd.OrderProducts_IndividualUser_Page();		
+		OrdProd.OrderProducts_IndividualUsr_Page();		
 		
 		//addpay.add_creditcard();
 		//sp.SwithUser("Merchant");

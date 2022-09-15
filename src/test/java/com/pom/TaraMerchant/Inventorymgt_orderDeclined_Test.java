@@ -9,7 +9,6 @@ package com.pom.TaraMerchant;
 	import com.pom.TaraMerchant.pages.HomePage;
 import com.pom.TaraMerchant.pages.OrderMgt_Page;
 import com.pom.TaraMerchant.pages.POS_Order;
-	import com.pom.TaraMerchant.pages.base.BasePage;
 	import com.pom.TaraMerchant.util.TMConstants;
 	import com.relevantcodes.extentreports.LogStatus;
 
@@ -18,9 +17,11 @@ import com.pom.TaraMerchant.pages.POS_Order;
 
 		
 		@Test
-		public void Test1_addproduct() throws InterruptedException, IOException {
+		public void Test1_OrderDeclained() throws InterruptedException, IOException {
 			test = rep.startTest("Product count check when Order declined");
 			test.log(LogStatus.INFO, "Starting inventory mgt test ");
+			
+
 			launchApp();
 			Thread.sleep(4000);
 			HomePage hm;
@@ -86,7 +87,6 @@ import com.pom.TaraMerchant.pages.POS_Order;
 			 System.out.println(" after quantity"+after_quantity);
 			 //test.log(LogStatus.INFO,"quantity is "+val_str1);
 			  
-			 BasePage BP=new BasePage(aDriver, test);
 			 if(after_quantity == befor_quantity) {
 				 
 					test.log(LogStatus.PASS, "TestPass: Count is not changed ");

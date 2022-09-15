@@ -1,28 +1,11 @@
 package com.pom.TaraMerchant;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.FindBy;
 import org.testng.annotations.Test;
-
 import com.pom.TaraMerchant.pages.AddProduct_Page;
 import com.pom.TaraMerchant.pages.HomePage;
-import com.pom.TaraMerchant.pages.StoreCreation_Page;
-import com.pom.TaraMerchant.pages.add_paymentoption_Page;
 import com.pom.TaraMerchant.util.TMConstants;
 import com.relevantcodes.extentreports.LogStatus;
-
-import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
-import io.appium.java_client.remote.MobileCapabilityType;
 
 public class AddProduct_Test extends BaseTest
 {

@@ -45,8 +45,7 @@ public class CollectMoney_Page extends BasePage{
 	
 	public CollectMoney_Page(AndroidDriver<AndroidElement> aDriver, ExtentTest test){
 		 super(aDriver,test);
-		   
-		}
+	}	   
 	
 	public void AddCollectMoney() throws InterruptedException
 	{

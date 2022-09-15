@@ -1,9 +1,7 @@
 package com.pom.TaraMerchant;
-//https://drive.google.com/open?id=0B6ou87zaWpBkUnJnV2lMbkQ3Tjg
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
@@ -11,17 +9,14 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-import org.junit.AfterClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 
 import com.pom.TaraMerchant.util.ExtentManager;
 import com.pom.TaraMerchant.util.TMConstants;
-import com.pom.TaraMerchant.util.Xls_Reader;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -34,7 +29,8 @@ public class BaseTest extends TMConstants {
 	public static AndroidDriver<AndroidElement> aDriver;
 	//public static Xls_Reader xls = new Xls_Reader(TMConstants.XLS_PATH);
 	
-    @SuppressWarnings("deprecation")
+
+	@SuppressWarnings("unchecked")
 	public void launchApp() throws InterruptedException, IOException{
 		 	File app = new File(TMConstants.APK_PATH);
 	     	DesiredCapabilities capabilities =new DesiredCapabilities();
@@ -54,7 +50,7 @@ public class BaseTest extends TMConstants {
 	 		capabilities.setCapability("appActivity", TMConstants.APPWAITACTIVITY);
 			capabilities.setCapability("appPackage", TMConstants.APPACTIVITY);
 			capabilities.setCapability("autoGrantPermissions", "true");
-			capabilities.setCapability("noReset", "true");
+			//capabilities.setCapability("noReset", "true");
 			capabilities.setCapability("fullReset", "false");
 			capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,180);
   		    capabilities.setCapability("app", app.getAbsolutePath());
@@ -63,8 +59,11 @@ public class BaseTest extends TMConstants {
 			//Start Appium server
 			//Runtime.getRuntime().exec("cmd.exe /c start cmd.exe /k \"appium -a 127.0.0.1 -p 4723\"");
 			//Thread.sleep(20000);
-			driver = new AndroidDriver<AndroidElement>(new URL(TMConstants.HUB_URL), capabilities);
-			aDriver = (AndroidDriver<AndroidElement>)driver;
+//						
+		    driver = new AndroidDriver<AndroidElement>(new URL(TMConstants.HUB_URL), capabilities);
+		aDriver = (AndroidDriver<AndroidElement>)driver;
+			//aDriver = new AndroidDriver<AndroidElement>(new URL(TMConstants.HUB_URL), capabilities);
+			
 			System.out.println("application launched successfully");
 		} catch (MalformedURLException e) {
 			test.log(LogStatus.FAIL, "Application did not launch "+ e.getMessage());
@@ -82,14 +81,14 @@ public class BaseTest extends TMConstants {
 			rep.flush();
 		}
     }
-	@AfterClass
-		public void reseting() {
+//	@AfterClass
+//		public void reseting() {
+//		
+//			if(aDriver!=null) 
+//				
+//			aDriver.resetApp();
 		
-			if(aDriver!=null) 
-				
-			aDriver.resetApp();
-		
-	}
+	//}
 
 
 	

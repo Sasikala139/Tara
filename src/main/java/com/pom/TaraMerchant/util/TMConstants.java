@@ -1,10 +1,5 @@
 package com.pom.TaraMerchant.util;
 
-import java.sql.Date;
-
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-
 public class TMConstants {
 
 	// App parameters
@@ -15,7 +10,7 @@ public class TMConstants {
 		
 	    
 		public static final String APPACTIVITY = "app.tara.tara_app";
-		public static final String PLATFORM = "android";
+		public static final String PLATFORM = "android fullReset"; 
 		public static final String APPWAITACTIVITY = "app.tara.tara_app.MainActivity";
 		
 	//Mobile number and OTP

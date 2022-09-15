@@ -2,12 +2,8 @@ package com.pom.TaraMerchant.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
-
 import com.pom.TaraMerchant.pages.base.BasePage;
 import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
-
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -50,7 +46,7 @@ public void NavigationTo_IndividualUser() throws InterruptedException {
 		waitForElementforClick(SwitchToIndual, 20);
 }
     
-    public void OrderProducts_IndividualUser_Page() throws InterruptedException  {
+    public void OrderProducts_IndividualUsr_Page() throws InterruptedException  {
 		
 		waitForElementforClick(Store, 20);
         Thread.sleep(2000);

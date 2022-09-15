@@ -84,11 +84,16 @@ public class voucher_page extends BasePage{
             Thread.sleep(2000);
 			
             TouchAction action = new TouchAction(aDriver);
+            int x = aDriver.manage().window().getSize().getWidth()/2;
+	        int y = aDriver.manage().window().getSize().getHeight()/2;
+            
+           // action.tap(PointOption.point(x, y-(y))).perform();
+           //.tap(x, y).perform();
+
 
 			//int endy=aDriver.manage().window().getSize().getHeight()/7;
-	        int x = aDriver.manage().window().getSize().getWidth()/2;
-	        int y = aDriver.manage().window().getSize().getHeight()/2;
-	        action.longPress(x, y).moveTo(x, y-(y)).release().perform();
+	       
+	   action.longPress(x, y).moveTo(x, y-(y)).release().perform();
 	        Thread.sleep(3000);
 
 

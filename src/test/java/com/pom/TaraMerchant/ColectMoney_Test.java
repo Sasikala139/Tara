@@ -7,7 +7,8 @@ package com.pom.TaraMerchant;
 
 import com.pom.TaraMerchant.pages.CollectMoney_Page;
 import com.pom.TaraMerchant.pages.HomePage;
-	import com.pom.TaraMerchant.util.TMConstants;
+import com.pom.TaraMerchant.pages.OrderProducts_IndividualUser_Page;
+import com.pom.TaraMerchant.util.TMConstants;
 	import com.relevantcodes.extentreports.LogStatus;
 
 	public class ColectMoney_Test extends BaseTest {
@@ -26,11 +27,16 @@ import com.pom.TaraMerchant.pages.HomePage;
 			}
 			//PageFactory.initElements(aDriver, this);
 			Thread.sleep(10000);
-			hm.OTPValidation(TMConstants.MobileNumber,TMConstants.OTP0,TMConstants.OTP1,TMConstants.OTP2,TMConstants.OTP3,TMConstants.OTP4,TMConstants.OTP5);				
-			 
+			hm.OTPValidation(TMConstants.MobileNumber,TMConstants.OTP0,TMConstants.OTP1,TMConstants.OTP2,TMConstants.OTP3,TMConstants.OTP4,TMConstants.OTP5);				 
 			
 			CollectMoney_Page CMP=new CollectMoney_Page(aDriver, test);
 			CMP.AddCollectMoney();
+			
+			OrderProducts_IndividualUser_Page IndiUser=new OrderProducts_IndividualUser_Page(aDriver, test);
+			IndiUser.NavigationTo_IndividualUser();
+			
+			
+			
 		}	
 	
 }

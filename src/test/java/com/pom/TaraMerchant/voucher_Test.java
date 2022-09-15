@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
-import com.pom.TaraMerchant.pages.AddProduct_Page;
 import com.pom.TaraMerchant.pages.HomePage;
 import com.pom.TaraMerchant.pages.voucher_page;
 import com.pom.TaraMerchant.util.TMConstants;

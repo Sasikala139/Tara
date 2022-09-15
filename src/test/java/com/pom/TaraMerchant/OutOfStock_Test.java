@@ -14,7 +14,7 @@ import com.relevantcodes.extentreports.LogStatus;
 public class OutOfStock_Test extends BaseTest {
 
 	@Test
-	public void Test1_addproduct() throws InterruptedException, IOException {
+	public void Test1_OutOfStock() throws InterruptedException, IOException {
 		test = rep.startTest("Out of stock test");
 		test.log(LogStatus.INFO, "Starting Out of stock test ");
 		launchApp();

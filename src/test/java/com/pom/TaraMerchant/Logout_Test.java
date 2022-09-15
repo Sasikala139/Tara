@@ -12,6 +12,8 @@ public class Logout_Test extends BaseTest {
 	public void Logout() throws InterruptedException, IOException {
 		test = rep.startTest("Logout test");
 		test.log(LogStatus.INFO, "Starting the Logout test ");
+		System.out.println("Starting Logout test ");
+
 		launchApp();
 		Thread.sleep(4000);
 		HomePage hm;

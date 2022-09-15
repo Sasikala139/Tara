@@ -1,7 +1,4 @@
 package com.pom.TaraMerchant.pages;
-
-import java.util.Set;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,8 +14,6 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
 public class AddProduct_Page extends BasePage{
-	
-	// updated something
 	
 	@FindBy(xpath="//android.widget.ImageView[@index='0']")
     public WebElement ProductImage; 
@@ -223,6 +218,7 @@ public void NavigationTo_Orders() throws InterruptedException {
 		test.log(LogStatus.INFO, "Clicking delete product icon");
 		click(delete_icon);
 		WebDriverWait wait = new WebDriverWait(aDriver, 20);
+		//use some other method
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("/hierarchy/android.widget.Toast")));
 		String toastmessage= aDriver.findElementByXPath("/hierarchy/android.widget.Toast").getText();   
 		Thread.sleep(2000);

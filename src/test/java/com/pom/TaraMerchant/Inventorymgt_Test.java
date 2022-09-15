@@ -17,9 +17,12 @@ public class Inventorymgt_Test extends BaseTest {
 
 	
 	@Test
-	public void Test1_addproduct() throws InterruptedException, IOException {
+	public void Test1_Inventory_mgt() throws InterruptedException, IOException {
 		test = rep.startTest("Product count check");
 		test.log(LogStatus.INFO, "Starting inventory mgt test ");
+		System.out.println("Starting inventory mgt test ");
+
+		
 		launchApp();
 		Thread.sleep(4000);
 		HomePage hm;
@@ -35,19 +38,19 @@ public class Inventorymgt_Test extends BaseTest {
 		AddProduct_Page addprod=new AddProduct_Page(aDriver, test);
 		//sp.SwithUser("Merchant");
 		addprod.NavigationTo_addProduct();
-		addprod.AddProductfororder("TestProductforOrder", "1000", "10");
+		addprod.AddProductfororder("TestProdforcountChk", "1000", "10");
 		Thread.sleep(5000);
-		WebElement productstirng=aDriver.findElementByXPath("//android.view.View[contains(@content-desc,'TestProductforOrder')]");
+		WebElement productstirng=aDriver.findElementByXPath("//android.view.View[contains(@content-desc,'TestProdforcountChk')]");
 		String beforeorderquantity=productstirng.getTagName();
 		aDriver.navigate().back();
 		POS_Order pos= new POS_Order(aDriver, test);
 		Thread.sleep(4000);
-		pos.SearchProduct("TestProductforOrder");
+		pos.SearchProduct("TestProdforcountChk");
 		pos.OrderThroughPos_cash();
 		addprod.NavigationTo_addProduct();
 		Thread.sleep(12000);
 	
-		WebElement productstirng1=aDriver.findElementByXPath("//android.view.View[contains(@content-desc,'TestProductforOrder')]");
+		WebElement productstirng1=aDriver.findElementByXPath("//android.view.View[contains(@content-desc,'TestProdforcountChk')]");
 		String afterrderquantity=productstirng1.getTagName();
 		
 		//spliting beforequantity
@@ -68,7 +71,7 @@ public class Inventorymgt_Test extends BaseTest {
 		 String afterdatasplit1[];
 		 afterdatasplit1 = afterrderquantity.split("\\n");
 		 
-		 System.out.println(" split by new line"+Arrays.toString(datasplit));
+		 System.out.println(" split by new line"+Arrays.toString(afterdatasplit1));
 		 String afterdatasplit2[] ;
 		 afterdatasplit2 = afterdatasplit1[1].split(":");
 		 String val_str1 = afterdatasplit2[1].trim();
@@ -86,8 +89,8 @@ public class Inventorymgt_Test extends BaseTest {
 			 BP.reportFail("Ooops! Count is not changed");
 		 }
 		 	
-		
-				
+       
+			System.out.println("Test Executed Successfully ");
 			
 }
 }
